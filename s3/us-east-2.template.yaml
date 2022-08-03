@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Learning Synk"
+
+Resources:
+  bucketTestForSynk:
+    Type: AWS::S3:Bucket
+    Properties:
+      BucketName: "aws-synk-test"
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+            SSEAlgorithm: AES256
+  DeletionPolicy: Retain
